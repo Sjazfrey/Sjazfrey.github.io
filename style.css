@@ -1,0 +1,22 @@
+h1 {
+    text-indent: 230px;
+}
+
+table{
+    border: 5px solid gray;
+    justify-content: center;
+}
+
+td {
+    border: 3px solid white;
+    width: 100px;
+    height: 100px;
+    justify-content: center;
+    background: rgb(145, 170, 218);
+    margin: 500px;
+}
+
+.card.flipped {
+    transform: rotateY( 90deg );
+}
+
