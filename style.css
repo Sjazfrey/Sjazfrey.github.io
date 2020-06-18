@@ -13,9 +13,11 @@ td {
     height: 100px;    
     background: rgb(145, 170, 218);
     margin: 500px;
+    text-align: center;
+    
 }
 
-.card.flipped {
+td .flipped {
     transform: rotateY( 90deg );
 }
 
