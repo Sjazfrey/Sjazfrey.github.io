@@ -28,14 +28,9 @@ let alphabet = [ 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M'
 //     })
 //  })
  
-//});
-// Click, click
-// Match or not a match
-//.addEventListner()
+//})
 
-
-
-// Fisher-Yates (aka Knuth) Shuffle     Should this shuffle upon start of game??
+// Fisher-Yates (aka Knuth) Shuffle    This shuffle upon start of game??
  function shuffle(array) {
     var currentIndex = array.length, temporaryValue, randomIndex;
   
@@ -49,31 +44,24 @@ let alphabet = [ 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M'
     return array;
 }
 
- $(function(){
-      
-    // while (a = table.rows -column)
+ $(function(){                     // while (a = table.rows -column)
     alphabet = shuffle(alphabet);
     for (let i = 0; i < 6; i++) {
     //iterate through rows
-           for (let j = 0; j < 6; j++) {
-        //iterate through columns
-            let rowColumn = ".row" + (i + 1) + "-column" + (j + 1)
-            //columns would be accessed using the "col" variable assigned in the for loop
-            //$(rowColumn).text(alphabet[i * 6 + j])
-            $(rowColumn).append ($("<div>").text(alphabet[i * 6 + j]))
-
-
-            //$(rowColumn).append(alphabet[i * 6 + j])
+           for (let j = 0; j < 6; j++) {        //iterate through columns
+              let rowColumn = ".row" + (i + 1) + "-column" + (j + 1) + ".back" 
+              //row1-column1 back         
+                 $(rowColumn).append ($("<div>").text(alphabet[i * 6 + j]))
+           
         }  
     }
     $('td').on("click", function(event){
-        ($(event.currentTarget).toggleClass('flipped'))
-        $("td").on("click", function(){
-            setTimeout(2000);
-        })
+       // ($(event.currentTarget).toggleClass('flipped'))
+        let clickClass = ($(event.currentTarget).attr('class').split(' ')[0]);
+        $("." + clickClass).toggleClass('flipped')
+        console.log(clickClass)
      })
      
-
 })
 
  
