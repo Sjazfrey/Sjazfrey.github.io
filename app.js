@@ -1,4 +1,6 @@
-let alphabet = [ 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R'] // Alphabet A-Z 
+// let alphabet = [ 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R'] // Alphabet A-Z 
+
+let alphabet = [ 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A']
 
 // Game Play (Match)
 
@@ -36,29 +38,50 @@ let alphabet = [ 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M'
     }
     $('td').on("click", function(event){
        // ($(event.currentTarget).toggleClass('flipped'))
+       if (waiting == true) {
+           return;
+       }
+
         let clickClass = ($(event.currentTarget).attr('class').split(' ')[0]);
-        $("." + clickClass).toggleClass('flipped')
+        $("." + clickClass).addClass('flipped')
         console.log(clickClass)
         let rowColumn = "." + clickClass + "> .back" // .row1-column1 > .back
         let clickLetter = $(rowColumn).text()        
         console.log(clickLetter)
+        if ( $("." + clickClass).hasClass("matched")) {
+            return
+        }
         box.push(clickLetter) 
         console.log(box)// [B, O] 
+        console.log('Waiting' + waiting);
         if (box.length == 2){
+            waiting = true;
             if (box[0] == box[1]) {
-                console.log(true)        
+                $(".flipped").addClass("matched").removeClass("flipped")
+                waiting = false;
+                console.log(true) 
+
             }  
             else {
                 setTimeout(function(){
                     $("td").removeClass('flipped')
-                }, 1500)
+                    waiting = false;
+                }, 1000)
 
                 console.log(false)
             }
             box = []
         }
+
+        let endGame = $('.matched').length
+        if (endGame == 36){
+            console.log("You Won!")
+        }
+        console.log('Matches: ' + endGame)
     })
-     let box = [] // [N, M]
+
+    let box = [] // [N, M]
+    let waiting = false;
 })
 
  

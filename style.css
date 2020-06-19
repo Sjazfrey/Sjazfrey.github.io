@@ -54,6 +54,12 @@ td {
     text-align: center;
 }
         
+
 .flip-box.flipped {
     transform: rotateY(180deg);
+    background: lightcoral;
+}
+.flip-box.matched {
+    transform: rotateY(180deg);
+    background: lightcoral;
 }
