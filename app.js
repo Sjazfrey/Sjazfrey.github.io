@@ -48,11 +48,10 @@ let alphabet = [ 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M'
     alphabet = shuffle(alphabet);
     for (let i = 0; i < 6; i++) {
     //iterate through rows
-           for (let j = 0; j < 6; j++) {        //iterate through columns
-              let rowColumn = ".row" + (i + 1) + "-column" + (j + 1) + ".back" 
-              //row1-column1 back         
-                 $(rowColumn).append ($("<div>").text(alphabet[i * 6 + j]))
-           
+        for (let j = 0; j < 6; j++) {        //iterate through columns
+            let rowColumn = ".row" + (i + 1) + "-column" + (j + 1) + "> .back" 
+            //.row1-column1 > .back         
+            $(rowColumn).append ($("<div>").text(alphabet[i * 6 + j]))
         }  
     }
     $('td').on("click", function(event){
