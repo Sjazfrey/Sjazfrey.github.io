@@ -1,6 +1,6 @@
-// let alphabet = [ 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R'] // Alphabet A-Z 
+let alphabet = [ 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R'] // Alphabet A-Z 
 
-let alphabet = [ 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A']
+// let alphabet = [ 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A']
 
 // Game Play (Match)
 
@@ -66,7 +66,7 @@ let alphabet = [ 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A'
                 setTimeout(function(){
                     $("td").removeClass('flipped')
                     waiting = false;
-                }, 1000)
+                }, 750)
 
                 console.log(false)
             }
@@ -76,8 +76,22 @@ let alphabet = [ 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A'
         let endGame = $('.matched').length
         if (endGame == 36){
             console.log("You Won!")
+            //AJAX : https://api.imgflip.com/get_memes
+            let xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                    let winningUrl = JSON.parse(this.responseText).data.memes[97].url
+                    console.log(winningUrl);
+                    $(".winningimage").attr("src",winningUrl);
+                    $(".winningimage").css("visibility","visible")
+                }
+            };
+            xhttp.open("GET", "https://api.imgflip.com/get_memes", true);
+            xhttp.send();
+
         }
         console.log('Matches: ' + endGame)
+
     })
 
     let box = [] // [N, M]
