@@ -1,5 +1,7 @@
 h1 {
-    text-indent: 230px;
+    position: absolute;
+    margin-top: 20px;
+    margin-left: 230px;
     color: grey ;
 }
 
@@ -65,11 +67,63 @@ td {
 }
 .winningimage {
     visibility: hidden;
-}
+} 
 
 img {
     position: absolute;
     margin-left: 700px;
-    margin-top: 150px;
-   
+    margin-top: 150px;  
+}
+
+@media screen and (max-width: 1200px) {
+
+    td {
+        width: 60px;
+        height: 60px;    
+    }
+    h1 {
+        margin-left: 50px;
+    }
+    h2 {
+        position: absolute;
+        text-indent: 50px;
+        margin-top: 500px;
+    }
+    p {   
+        margin-left: 10px;
+        margin-top: 550px;
+    }
+    img {
+        margin-left: 10px;
+        margin-top: 600px;  
+    }
+}
+
+/* Tooltip CSS - Credit: www.w3schools.com */
+.tooltip {
+    position: relative;
+    display: inline-block;
+    border-bottom: 1px dotted black;
+  }
+  
+.tooltip .tooltiptext {
+    font-size: 14px;
+    visibility: hidden;
+    background-color: lightcyan;
+    color: blueviolet;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    position: absolute;
+    z-index: 1;
+    top: 125%;
+    left: 50%;
+    margin-left: -60px;
+    opacity: 0;
+    transition: opacity 1.3s;
+}
+  
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
 }

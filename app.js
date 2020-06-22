@@ -3,16 +3,15 @@ let alphabet = [ 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M'
 // let alphabet = [ 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A']
 
 // Game Play (Match)
-
 //    2a) Alert the user they got a match
-//    2b) Fade to different color, removing the letter
+//    2b) Fade to different color,
        
 // Game Play (Unmatch)
 //    2a) Alert the use it's not a match
 //    2b) Cards flip back over
 
 
-// Fisher-Yates (aka Knuth) Shuffle    This shuffle upon start of game??
+// Fisher-Yates (aka Knuth) Shuffle    This shuffle upon start of game
  function shuffle(array) {
     let currentIndex = array.length, temporaryValue, randomIndex;
   
