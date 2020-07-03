@@ -1,0 +1,200 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Memory Game</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="app.js" charset="utf-8"></script>
+        <link rel="stylesheet" href="style.css">
+    
+    </head>
+    <body>
+        <h1 class = "tooltip">
+            Memory Game
+            <span class ="tooltiptext">
+                &#128516 Created by Shirley Kaffrey, 2020 
+            </span>
+        </h1>
+    <div>
+        <h2 class = "title">How to Play</h2>
+
+        <p>  
+            Start by clicking on 2 tiles. If they match then they will stay and you get to click on 2 more tiles. If they do not match, then they will turn back over and you will click 2 more tiles to try to get a match. Game over when all tiles match.
+        </p>
+        <img  class="winningimage" src="" alt="Wining Image" >
+             
+    </div>
+
+    <table>
+
+        <tr>
+            <td class = "row1-column1 flip-box">
+                <div class = "front"></div>
+                <div class = "back"></div>
+            </td>
+            <td class = "row1-column2 flip-box">
+                <div class = "front"></div>
+                <div class = "back"></div>
+            </td>
+            <td class = "row1-column3 flip-box">
+                <div class = "front"></div>
+                <div class = "back"></div>
+            </td>
+            <td class = "row1-column4 flip-box">
+                <div class = "front"></div>
+                <div class = "back"></div>
+            </td>
+            <td class = "row1-column5 flip-box">
+                <div class = "front"></div>
+                <div class = "back"></div>
+            </td>
+            <td class = "row1-column6 flip-box">
+                <div class = "front"></div>
+                <div class = "back"></div>
+            </td>
+        </tr>
+
+        <tr>
+            <td class = "row2-column1 flip-box">
+                <div class = "front"></div>
+                <div class = "back"></div>
+            </td>
+            <td class = "row2-column2 flip-box">
+                <div class = "front"></div>
+                <div class = "back"></div>
+            </td>
+            <td class = "row2-column3 flip-box">
+                <div class = "front"></div>
+                <div class = "back"></div>
+            </td>
+            <td class = "row2-column4 flip-box">
+                <div class = "front"></div>
+                <div class = "back"></div>
+            </td>
+            <td class = "row2-column5 flip-box">
+                <div class = "front"></div>
+                <div class = "back"></div>
+            </td>
+            <td class = "row2-column6 flip-box">
+                <div class = "front"></div>
+                <div class = "back"></div>
+            </td>
+        </tr> 
+
+            <tr>
+             <td class = "row3-column1 flip-box">
+                <div class = "front"></div>
+                <div class = "back"></div>
+            </td>
+            <td class = "row3-column2 flip-box">
+                <div class = "front"></div>
+                <div class = "back"></div>
+            </td>
+            <td class = "row3-column3 flip-box">
+                <div class = "front"></div>
+                <div class = "back"></div>
+            </td>
+            <td class = "row3-column4 flip-box">
+                <div class = "front"></div>
+                <div class = "back"></div>
+            </td>
+            <td class = "row3-column5 flip-box">
+                <div class = "front"></div>
+                <div class = "back"></div>
+            </td>
+            <td class = "row3-column6 flip-box">
+                <div class = "front"></div>
+                <div class = "back"></div>
+            </td> 
+        </tr>
+
+        <tr>
+            <td class = "row4-column1 flip-box">
+                <div class = "front"></div>
+                <div class = "back"></div>
+            </td>
+            <td class = "row4-column2 flip-box">
+                <div class = "front"></div>
+                <div class = "back"></div>
+            </td>
+            <td class = "row4-column3 flip-box">
+                <div class = "front"></div>
+                <div class = "back"></div>
+            </td>
+            <td class = "row4-column4 flip-box">
+                <div class = "front"></div>
+                <div class = "back"></div>
+            </td>
+            <td class = "row4-column5 flip-box">
+                <div class = "front"></div>
+                <div class = "back"></div>
+            </td>
+            <td class = "row4-column6 flip-box">
+                <div class = "front"></div>
+                <div class = "back"></div>
+            </td>
+        </tr>
+
+        <tr>
+            <td class = "row5-column1 flip-box">
+                <div class = "front"></div>
+                <div class = "back"></div>
+            </td>
+            <td class = "row5-column2 flip-box">
+                <div class = "front"></div>
+                <div class = "back"></div>
+            </td>
+            <td class = "row5-column3 flip-box">
+                <div class = "front"></div>
+                <div class = "back"></div>
+            </td>
+            <td class = "row5-column4 flip-box">
+                <div class = "front"></div>
+                <div class = "back"></div>
+            </td>
+            <td class = "row5-column5 flip-box">
+                <div class = "front"></div>
+                <div class = "back"></div>
+            </td>
+            <td class = "row5-column6 flip-box">
+                <div class = "front"></div>
+                <div class = "back"></div>
+            </td>
+        </tr>
+        
+
+        <tr>
+            <td class = "row6-column1 flip-box">
+                <div class = "front"></div>
+                <div class = "back"></div>
+            </td>
+            <td class = "row6-column2 flip-box">
+                <div class = "front"></div>
+                <div class = "back"></div>
+            </td>
+            <td class = "row6-column3 flip-box">
+                <div class = "front"></div>
+                <div class = "back"></div>
+            </td>
+            <td class = "row6-column4 flip-box">
+                <div class = "front"></div>
+                <div class = "back"></div>
+            </td>
+            <td class = "row6-column5 flip-box">
+                <div class = "front"></div>
+                <div class = "back"></div>
+            </td>
+            <td class = "row6-column6 flip-box">
+                <div class = "front"></div>
+                <div class = "back"></div>
+            </td>
+        </tr>
+
+                    
+        </table>
+    </body>
+</html>
+
+
+   
