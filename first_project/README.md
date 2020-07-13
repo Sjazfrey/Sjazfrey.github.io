@@ -7,4 +7,4 @@ I had difficulty with the flip method. This took many hours. I tables can not co
 
 I would add add imagines to the tiles when flipped. I did not have enough time to add this feature. 
 
-https://sjazfrey.github.io/
+https://sjazfrey.github.io/first_project
